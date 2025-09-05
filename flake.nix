@@ -23,10 +23,7 @@
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-      in
-      {
-
-        packages.default =
+        mnvim =
           (nvf.lib.neovimConfiguration {
             pkgs = pkgs;
             modules = [
@@ -34,6 +31,19 @@
               ./keybinds.nix
             ];
           }).neovim;
+
+      in
+      {
+
+        overlays = {
+          default = (
+            final: prev: {
+              mnvim = mnvim;
+            }
+          );
+        };
+
+        packages.default = mnvim;
 
       }
     );
