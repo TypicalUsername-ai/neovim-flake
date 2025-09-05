@@ -35,11 +35,11 @@
       in
       {
 
-        overlays = {
-          default = final: prev: {
-            mnvim = mnvim;
-          };
-        };
+        overlays = [
+          (final: prev: {
+            mnvim = final.callPackage self.default;
+          })
+        ];
 
         packages.default = mnvim;
 
