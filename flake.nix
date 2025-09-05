@@ -36,11 +36,9 @@
       {
 
         overlays = {
-          default = (
-            final: prev: {
-              mnvim = mnvim;
-            }
-          );
+          default = final: prev: {
+            mnvim = mnvim;
+          };
         };
 
         packages.default = mnvim;
