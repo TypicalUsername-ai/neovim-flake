@@ -13,7 +13,7 @@
     statusline.lualine = {
       enable = true;
     };
-    visuals.cursorline = {
+    visuals.nvim-cursorline = {
       enable = true;
     };
   };
