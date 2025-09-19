@@ -17,32 +17,39 @@
       flake-utils,
       nvf,
       ...
-    }@inputs:
-
-    flake-utils.lib.eachDefaultSystem (
+    }:
+    flake-utils.lib.eachDefaultSystemPassThrough (
       system:
       let
         pkgs = nixpkgs.legacyPackages.${system};
-        mnvim =
-          (nvf.lib.neovimConfiguration {
-            pkgs = pkgs;
-            modules = [
-              ./theme.nix
-              ./keybinds.nix
-            ];
-          }).neovim;
-
+        #nothing legacy just a flattened interface
+        configModules = [
+          nvf.nixosModules.default
+          ./modules/default.nix
+          ./modules/keymaps.nix
+          ./modules/oil.nix
+          ./modules/lsp.nix
+          ./modules/cmp.nix
+          ./modules/theme.nix
+          ./modules/fmt.nix
+          ./modules/git.nix
+          ./modules/telescope.nix
+        ];
       in
       {
-
-        overlays.default = (
-          final: prev: {
-            mnvim = final.callPackage self.default;
+        nixosModules.default = (
+          { config, pkgs, ... }:
+          {
+            imports = configModules;
+            config = {
+              nvim-batteries = {
+                oil.enable = true;
+                completions.enable = true;
+                formatting.enable = true;
+              };
+            };
           }
         );
-
-        packages.default = mnvim;
-
       }
     );
 }
