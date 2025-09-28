@@ -34,6 +34,7 @@
           ./modules/fmt.nix
           ./modules/git.nix
           ./modules/telescope.nix
+          ./modules/languages/python.nix
         ];
       in
       {
