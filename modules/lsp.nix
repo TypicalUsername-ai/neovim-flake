@@ -9,6 +9,10 @@
     enable = true;
   };
 
+  vim.binds.whichKey = {
+    enable = true;
+  };
+
   programs.nvf.settings.vim.languages.nix = {
     enable = true;
     format = {

@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   nvf,
   ...
 #inputs,
@@ -16,7 +17,7 @@
     programs.nvf = {
       enable = true;
       settings.vim = {
-        lazy.enable = false;
+        lazy.enable = true;
         viAlias = true;
         vimAlias = true;
         globals.mapleader = " ";
@@ -42,4 +43,6 @@
   };
   options = {
   };
+
+  environment.systemPackages = with pkgs; [ wl-copy ];
 }
