@@ -40,9 +40,9 @@
         ];
       };
     };
+    environment.systemPackages = with pkgs; [ wl-copy ];
   };
   options = {
   };
 
-  environment.systemPackages = with pkgs; [ wl-copy ];
 }
