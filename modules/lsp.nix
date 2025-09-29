@@ -1,14 +1,12 @@
 { config, pkgs, ... }:
 {
-  programs.nvf.settings.vim.lsp = {
-    inlayHints.enable = true;
-    lspSignature.enable = true;
-    trouble = {
-      enable = true;
-    };
-    lspconfig = {
-      enable = true;
-    };
+  programs.nvf.settings.vim.lsp.inlayHints.enable = true;
+  programs.nvf.settings.vim.lsp.lspSignature.enable = true;
+  programs.nvf.settings.vim.lsp.trouble = {
+    enable = true;
+  };
+  programs.nvf.settings.vim.lsp.lspconfig = {
+    enable = true;
   };
 
   programs.nvf.settings.vim.languages.nix = {
