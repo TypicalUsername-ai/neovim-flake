@@ -9,7 +9,7 @@
     enable = true;
   };
 
-  vim.binds.whichKey = {
+  programs.nvf.settings.vim.binds.whichKey = {
     enable = true;
   };
 
