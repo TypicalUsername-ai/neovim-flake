@@ -1,30 +1,32 @@
 { config, pkgs, ... }:
 {
-  programs.nvf.settings.vim.lsp.inlayHints.enable = true;
-  programs.nvf.settings.vim.lsp.lspSignature.enable = true;
-  programs.nvf.settings.vim.lsp.trouble = {
-    enable = true;
-  };
-  programs.nvf.settings.vim.lsp.lspconfig = {
-    enable = true;
-  };
-
-  programs.nvf.settings.vim.binds.whichKey = {
-    enable = true;
-  };
-
-  programs.nvf.settings.vim.languages.nix = {
-    enable = true;
-    format = {
-      type = "nixfmt";
-      enable = true;
-    };
+  config.vim = {
     lsp = {
+      inlayHints.enable = true;
+      lspSignature.enable = true;
+      trouble = {
+        enable = true;
+      };
+      lspconfig = {
+        enable = true;
+      };
+
+    };
+
+    binds.whichKey = {
       enable = true;
     };
-    treesitter.enable = true;
+
+    languages.nix = {
+      enable = true;
+      format = {
+        type = "nixfmt";
+        enable = true;
+      };
+      lsp = {
+        enable = true;
+      };
+      treesitter.enable = true;
+    };
   };
-
-  environment.systemPackages = with pkgs; [ nixfmt ];
-
 }

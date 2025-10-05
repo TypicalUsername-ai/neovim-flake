@@ -3,7 +3,7 @@
   ...
 }:
 {
-  programs.nvf.settings.vim = {
+  config.vim = {
     binds.whichKey.enable = true;
     theme = {
       enable = true;

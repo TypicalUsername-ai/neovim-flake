@@ -23,34 +23,33 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         #nothing legacy just a flattened interface
-        configModules = [
-          nvf.nixosModules.default
-          ./modules/default.nix
-          ./modules/keymaps.nix
-          ./modules/oil.nix
-          ./modules/lsp.nix
-          ./modules/cmp.nix
-          ./modules/theme.nix
-          ./modules/fmt.nix
+        batteries = [
           ./modules/git.nix
+          ./modules/fmt.nix
           ./modules/telescope.nix
           ./modules/languages/python.nix
+          ./modules/theme.nix
+          ./modules/base.nix
+          ./modules/lsp.nix
+          ./modules/cmp.nix
+          ./modules/oil.nix
         ];
       in
       {
-        nixosModules.default = (
-          { config, pkgs, ... }:
-          {
-            imports = configModules;
-            config = {
-              nvim-batteries = {
-                oil.enable = true;
-                completions.enable = true;
-                formatting.enable = true;
-              };
-            };
-          }
-        );
+        #nixosModules.default = (
+        #{ config, pkgs, ... }:
+        #{
+        #imports = configModules;
+        #config = defaultOptions;
+        #}
+        #);
+        packages.${system} = {
+          default =
+            (nvf.lib.neovimConfiguration {
+              pkgs = pkgs;
+              modules = batteries;
+            }).neovim;
+        };
       }
     );
 }
