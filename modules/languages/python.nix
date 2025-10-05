@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  programs.nvf.settings.vim.languages.python = {
+  config.vim.languages.python = {
     enable = true;
     format = {
       enable = true;

@@ -3,17 +3,10 @@
   pkgs,
   ...
 }:
-let
-  cfg = config.nvim-batteries.formatting;
-in
-with pkgs.lib;
 {
-  options = {
-    nvim-batteries.formatting.enable = mkEnableOption "conform-nvim formatting";
-  };
 
-  config = {
-    programs.nvf.settings.vim.formatter.conform-nvim = mkIf cfg.enable {
+  config.vim = {
+    formatter.conform-nvim = {
       enable = true;
       setupOpts = {
         format_on_save = {

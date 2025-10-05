@@ -3,22 +3,16 @@
   pkgs,
   ...
 }:
-let
-  cfg = config.nvim-batteries.completions;
-in
-with pkgs.lib;
 {
-  options = {
-    nvim-batteries.completions.enable = mkEnableOption "nvim-cmp completions";
-  };
 
-  config = {
-    programs.nvf.settings.vim.autocomplete.nvim-cmp = mkIf cfg.enable {
+  config.vim = {
+    autocomplete.nvim-cmp = {
       enable = true;
       sourcePlugins = [
-        "cmp-nvim-lsp" # from lsp suggestions
+        "nvim-lspconfig"
+        #"cmp-nvim-lsp" # from lsp suggestions
+        "trouble"
         "cmp-treesitter" # from treesitter defs
-
       ];
     };
   };
