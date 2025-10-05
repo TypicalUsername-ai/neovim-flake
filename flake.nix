@@ -23,17 +23,25 @@
       let
         pkgs = nixpkgs.legacyPackages.${system};
         #nothing legacy just a flattened interface
+        languages = [
+
+          ./modules/languages/python.nix
+          ./modules/languages/yaml.nix
+          ./modules/languages/typescript.nix
+          ./modules/languages/typst.nix
+          ./modules/languages/bash.nix
+        ];
         batteries = [
           ./modules/git.nix
           ./modules/fmt.nix
           ./modules/telescope.nix
-          ./modules/languages/python.nix
           ./modules/theme.nix
           ./modules/base.nix
           ./modules/lsp.nix
           ./modules/cmp.nix
           ./modules/oil.nix
-        ];
+        ]
+        ++ languages;
       in
       {
         #nixosModules.default = (
