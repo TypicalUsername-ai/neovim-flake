@@ -9,7 +9,7 @@
     enable = true;
     format = {
       enable = true;
-      package = lib.getExe' pkgs.rust-bin.stable.latest.default "rustfmt";
+      package = pkgs.rust-bin.stable.latest.rustfmt;
     };
     lsp = {
       enable = true;
