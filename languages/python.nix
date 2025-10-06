@@ -9,6 +9,7 @@
     };
     lsp = {
       enable = true;
+      package = pkgs.basedpyright;
     };
     treesitter = {
       enable = true;

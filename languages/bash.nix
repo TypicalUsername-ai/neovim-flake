@@ -12,6 +12,7 @@
     };
     lsp = {
       enable = true;
+      package = pkgs.bash-language-server;
     };
     treesitter = {
       enable = true;
