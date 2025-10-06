@@ -7,6 +7,10 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     flake-utils.url = "github:numtide/flake-utils";
   };
 
@@ -15,13 +19,14 @@
       self,
       nixpkgs,
       flake-utils,
+      rust-overlay,
       nvf,
       ...
     }:
     flake-utils.lib.eachDefaultSystemPassThrough (
       system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = nixpkgs.legacyPackages.${system}.extend rust-overlay.overlays.default;
         #nothing legacy just a flattened interface
         languages = [
           ./languages/python.nix
