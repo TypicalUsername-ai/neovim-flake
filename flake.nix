@@ -25,11 +25,11 @@
         #nothing legacy just a flattened interface
         languages = [
 
-          ./modules/languages/python.nix
-          ./modules/languages/yaml.nix
-          ./modules/languages/typescript.nix
-          ./modules/languages/typst.nix
-          ./modules/languages/bash.nix
+          ./languages/python.nix
+          ./languages/yaml.nix
+          ./languages/typescript.nix
+          ./languages/typst.nix
+          ./languages/bash.nix
         ];
         batteries = [
           ./modules/git.nix
