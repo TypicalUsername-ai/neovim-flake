@@ -24,12 +24,13 @@
         pkgs = nixpkgs.legacyPackages.${system};
         #nothing legacy just a flattened interface
         languages = [
-
           ./languages/python.nix
           ./languages/yaml.nix
           ./languages/typescript.nix
           ./languages/typst.nix
           ./languages/bash.nix
+          ./languages/markdown.nix
+          ./languages/rust.nix
         ];
         batteries = [
           ./modules/git.nix
