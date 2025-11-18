@@ -4,8 +4,8 @@
     enable = true;
     format = {
       enable = true;
-      type = "typstfmt";
-      package = pkgs.typstfmt;
+      type = "typstyle";
+      package = pkgs.typstyle;
     };
     lsp = {
       enable = true;
