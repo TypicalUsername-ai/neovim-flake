@@ -4,9 +4,6 @@
     lsp = {
       inlayHints.enable = true;
       lspSignature.enable = true;
-      trouble = {
-        enable = true;
-      };
       lspconfig = {
         enable = true;
       };
