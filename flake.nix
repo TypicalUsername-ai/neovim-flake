@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
     nvf = {
       url = "github:notashelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
+      #inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-utils.url = "github:numtide/flake-utils";
   };
@@ -38,6 +38,7 @@
           ./modules/telescope.nix
           ./modules/theme.nix
           ./modules/base.nix
+          ./modules/trouble.nix
           ./modules/lsp.nix
           ./modules/cmp.nix
           ./modules/oil.nix

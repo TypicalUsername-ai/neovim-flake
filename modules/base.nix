@@ -1,10 +1,10 @@
 {
   config,
   pkgs,
+  lib,
   nvf,
   ...
 #inputs,
-#lib,
 #specialArgs,
 #options,
 #_class,
@@ -27,7 +27,7 @@
       enable = true;
       package = pkgs.wl-clipboard;
     };
-    keymaps = [
+    keymaps = lib.mkAfter [
       {
         key = "Y";
         mode = [
