@@ -12,7 +12,10 @@
         "nvim-lspconfig"
         #"cmp-nvim-lsp" # from lsp suggestions
         "trouble"
-        "cmp-treesitter" # from treesitter defs
+        "cmp-buffer"
+        "cmp-path"
+        "conform-nvim"
+        #"cmp-treesitter" # from treesitter defs
       ];
     };
   };
