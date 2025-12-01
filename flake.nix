@@ -31,6 +31,7 @@
           ./languages/bash.nix
           ./languages/markdown.nix
           ./languages/rust.nix
+          ./languages/go.nix
         ];
         batteries = [
           ./modules/git.nix
