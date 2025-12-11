@@ -43,6 +43,7 @@
           ./modules/lsp.nix
           ./modules/cmp.nix
           ./modules/oil.nix
+          ./modules/snippets.nix
         ]
         ++ languages;
       in
