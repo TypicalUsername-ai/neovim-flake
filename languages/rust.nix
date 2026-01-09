@@ -4,7 +4,6 @@
     enable = true;
     format = {
       enable = true;
-      package = pkgs.rustfmt;
     };
     lsp = {
       enable = true;

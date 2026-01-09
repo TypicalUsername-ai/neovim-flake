@@ -5,7 +5,6 @@
     format = {
       enable = true;
       type = "typstyle";
-      package = pkgs.typstyle;
     };
     lsp = {
       enable = true;

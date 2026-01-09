@@ -7,7 +7,6 @@
     };
     format = {
       enable = true;
-      package = pkgs.deno;
     };
     lsp = {
       enable = true;

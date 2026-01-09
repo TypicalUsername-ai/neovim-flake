@@ -4,7 +4,6 @@
     enable = true;
     format = {
       enable = true;
-      package = pkgs.ruff;
       type = "ruff";
     };
     lsp = {

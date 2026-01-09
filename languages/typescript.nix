@@ -5,7 +5,6 @@
     format = {
       enable = true;
       type = "prettier";
-      package = pkgs.prettier;
     };
     lsp = {
       enable = true;

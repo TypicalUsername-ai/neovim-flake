@@ -4,7 +4,6 @@
     enable = true;
     format = {
       enable = false;
-      package = pkgs.go;
       type = "gofmt";
     };
     lsp = {
