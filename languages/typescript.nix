@@ -4,12 +4,11 @@
     enable = true;
     format = {
       enable = true;
-      type = "prettier";
+      type = [ "prettier" ];
     };
     lsp = {
       enable = true;
-      package = pkgs.deno;
-      server = "denols";
+      servers = [ "denols" ];
     };
     treesitter = {
       enable = true;

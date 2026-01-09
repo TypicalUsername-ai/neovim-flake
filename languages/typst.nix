@@ -4,12 +4,11 @@
     enable = true;
     format = {
       enable = true;
-      type = "typstyle";
+      type = [ "typstyle" ];
     };
     lsp = {
       enable = true;
-      server = "tinymist";
-      package = pkgs.tinymist;
+      servers = [ "tinymist" ];
     };
     treesitter = {
       enable = true;

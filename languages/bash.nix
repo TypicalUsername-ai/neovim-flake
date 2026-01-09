@@ -8,11 +8,10 @@
     };
     format = {
       enable = true;
-      type = "shfmt";
+      type = [ "shfmt" ];
     };
     lsp = {
       enable = true;
-      package = pkgs.bash-language-server;
     };
     treesitter = {
       enable = true;

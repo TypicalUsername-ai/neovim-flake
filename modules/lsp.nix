@@ -17,7 +17,7 @@
     languages.nix = {
       enable = true;
       format = {
-        type = "nixfmt";
+        type = [ "nixfmt" ];
         enable = true;
       };
       lsp = {

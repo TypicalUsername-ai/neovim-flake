@@ -10,7 +10,6 @@
     };
     lsp = {
       enable = true;
-      package = pkgs.marksman;
     };
     treesitter = {
       enable = true;

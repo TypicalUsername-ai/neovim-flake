@@ -4,11 +4,11 @@
     enable = true;
     format = {
       enable = true;
-      type = "ruff";
+      type = [ "ruff" ];
     };
     lsp = {
       enable = true;
-      package = pkgs.basedpyright;
+      servers = [ "basedpyright" ];
     };
     treesitter = {
       enable = true;

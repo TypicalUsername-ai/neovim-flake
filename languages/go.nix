@@ -4,12 +4,11 @@
     enable = true;
     format = {
       enable = false;
-      type = "gofmt";
+      type = [ "gofmt" ];
     };
     lsp = {
       enable = true;
-      package = pkgs.gopls;
-      server = "gopls";
+      servers = [ "gopls" ];
     };
     treesitter = {
       enable = true;
