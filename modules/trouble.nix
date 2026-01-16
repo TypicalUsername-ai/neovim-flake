@@ -28,6 +28,9 @@
       }
     ];
 
-    lazy.plugins.trouble.lazy = lib.mkForce false;
+    lazy.plugins.trouble = {
+      cmd = [ "Trouble" ];
+      after = "require('trouble').refresh()";
+    };
   };
 }
