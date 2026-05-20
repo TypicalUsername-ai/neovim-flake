@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  config.vim.languages.ts = {
+  config.vim.languages.typescript = {
     enable = true;
     format = {
       enable = true;
@@ -8,7 +8,7 @@
     };
     lsp = {
       enable = true;
-      servers = [ "denols" ];
+      servers = [ "deno" ];
     };
     treesitter = {
       enable = true;
