@@ -14,17 +14,5 @@
       enableFormat = true;
       enableTreesitter = true;
     };
-    keymaps = lib.mkAfter [
-      {
-        key = "Y";
-        mode = [
-          "n"
-          "v"
-        ];
-        action = ''"+y'';
-        desc = "Yank to systemp clipboard";
-      }
-    ];
   };
-
 }

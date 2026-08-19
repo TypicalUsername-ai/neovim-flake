@@ -37,6 +37,7 @@
                   features/base.nix
                   features/clipboard.nix
                   features/theme.nix
+                  features/oil.nix
                   features/lsp.nix
                   languages/nix.nix
                 ];
