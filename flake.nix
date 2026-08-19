@@ -33,7 +33,11 @@
             default =
               (inputs.nvf.lib.neovimConfiguration {
                 inherit pkgs;
-                modules = [ ];
+                modules = [
+                  features/theme.nix
+                  features/lsp.nix
+                  languages/nix.nix
+                ];
               }).neovim;
           };
         };
