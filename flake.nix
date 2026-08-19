@@ -2,66 +2,40 @@
   description = "NixOS Neovim Configuration Flake with nvf";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf = {
       url = "github:notashelf/nvf";
       #inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-utils.url = "github:numtide/flake-utils";
+    #flake-utils.url = "github:numtide/flake-utils";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+    };
   };
 
   outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
+    inputs@{
+      flake-parts,
       nvf,
       ...
     }:
-    flake-utils.lib.eachDefaultSystemPassThrough (
-      system:
-      let
-        pkgs = nixpkgs.legacyPackages.${system};
-        #nothing legacy just a flattened interface
-        languages = [
-          ./languages/python.nix
-          ./languages/yaml.nix
-          ./languages/typescript.nix
-          ./languages/typst.nix
-          ./languages/bash.nix
-          ./languages/markdown.nix
-          ./languages/rust.nix
-          ./languages/go.nix
-        ];
-        batteries = [
-          ./modules/git.nix
-          ./modules/fmt.nix
-          ./modules/telescope.nix
-          ./modules/theme.nix
-          ./modules/base.nix
-          ./modules/trouble.nix
-          ./modules/lsp.nix
-          ./modules/cmp.nix
-          ./modules/oil.nix
-          ./modules/snippets.nix
-        ]
-        ++ languages;
-      in
-      {
-        #nixosModules.default = (
-        #{ config, pkgs, ... }:
-        #{
-        #imports = configModules;
-        #config = defaultOptions;
-        #}
-        #);
-        packages.${system} = {
-          default =
-            (nvf.lib.neovimConfiguration {
-              pkgs = pkgs;
-              modules = batteries;
-            }).neovim;
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ]; # the systems supported by the flake
+      #per-system supports the self' argument which is the flake buth with the system already selected
+      #the same works for using inputs' instead of inputs
+      perSystem =
+        {
+          pkgs,
+          ...
+        }:
+        {
+          packages = {
+            default =
+              (inputs.nvf.lib.neovimConfiguration {
+                inherit pkgs;
+                modules = [ ];
+              }).neovim;
+          };
         };
-      }
-    );
+    };
 }
