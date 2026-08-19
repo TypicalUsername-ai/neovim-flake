@@ -34,6 +34,8 @@
               (inputs.nvf.lib.neovimConfiguration {
                 inherit pkgs;
                 modules = [
+                  features/base.nix
+                  features/clipboard.nix
                   features/theme.nix
                   features/lsp.nix
                   languages/nix.nix

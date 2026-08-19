@@ -1,18 +1,14 @@
 {
   config,
+  pkgs,
   lib,
   ...
 }:
 {
   config.vim = {
-    lazy.enable = true;
-    viAlias = true;
-    vimAlias = true;
-    globals.mapleader = " ";
-    globals.editorconfig = false;
-    languages = {
-      enableFormat = true;
-      enableTreesitter = true;
+    clipboard.providers.wl-copy = {
+      enable = true;
+      package = pkgs.wl-clipboard;
     };
     keymaps = lib.mkAfter [
       {
@@ -26,5 +22,4 @@
       }
     ];
   };
-
 }
