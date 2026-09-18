@@ -5,9 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nvf = {
       url = "github:notashelf/nvf";
-      #inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    #flake-utils.url = "github:numtide/flake-utils";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
     };
@@ -29,16 +28,20 @@
           ...
         }:
         {
+          formatter = pkgs.nixfmt-rs;
           packages = {
             default =
               (inputs.nvf.lib.neovimConfiguration {
                 inherit pkgs;
                 modules = [
                   features/base.nix
+                  features/fmt.nix
+                  features/git.nix
                   features/clipboard.nix
                   features/theme.nix
                   features/oil.nix
                   features/lsp.nix
+                  features/trouble.nix
                   languages/nix.nix
                 ];
               }).neovim;
