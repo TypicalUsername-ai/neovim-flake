@@ -1,10 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-with pkgs.lib;
-{
+_: {
 
   config.vim.git = {
     enable = true;

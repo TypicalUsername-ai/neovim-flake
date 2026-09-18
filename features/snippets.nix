@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-{
+_: {
   config.vim = {
     snippets.luasnip = {
       enable = true;

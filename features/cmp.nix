@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-{
+_: {
 
   config.vim = {
     autocomplete.nvim-cmp = {

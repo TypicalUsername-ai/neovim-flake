@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}:
-{
+_: {
   config.vim = {
     telescope = {
       enable = true;

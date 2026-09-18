@@ -1,8 +1,4 @@
-{
-  config,
-  ...
-}:
-{
+_: {
   config.vim = {
     binds.whichKey.enable = true;
     theme = {
