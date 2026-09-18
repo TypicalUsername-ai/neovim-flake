@@ -44,6 +44,7 @@
                   features/trouble.nix
                   languages/nix.nix
                   languages/python.nix
+                  languages/rust.nix
                 ];
               }).neovim;
           };
