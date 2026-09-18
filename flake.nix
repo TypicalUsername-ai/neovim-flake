@@ -31,7 +31,7 @@
           formatter = pkgs.nixfmt-rs;
           packages = {
             default =
-              (inputs.nvf.lib.neovimConfiguration {
+              (nvf.lib.neovimConfiguration {
                 inherit pkgs;
                 modules = [
                   features/base.nix
@@ -43,6 +43,7 @@
                   features/lsp.nix
                   features/trouble.nix
                   languages/nix.nix
+                  languages/python.nix
                 ];
               }).neovim;
           };

@@ -1,6 +1,5 @@
-{ config, pkgs, ... }:
-{
-  config.vim.languages.python = {
+_: {
+  vim.languages.python = {
     enable = true;
     format = {
       enable = true;
@@ -8,7 +7,7 @@
     };
     lsp = {
       enable = true;
-      servers = [ "basedpyright" ];
+      servers = [ "ty" ];
     };
     treesitter = {
       enable = true;
