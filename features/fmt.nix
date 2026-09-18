@@ -1,10 +1,7 @@
 {
-  config,
-  pkgs,
   ...
 }:
 {
-
   config.vim = {
     formatter.conform-nvim = {
       enable = true;
@@ -15,11 +12,6 @@
         };
         default_format_opts = {
           lsp_format = "fallback";
-        };
-        formatters_by_ft = {
-          nix = [
-            "nixfmt"
-          ];
         };
       };
 
