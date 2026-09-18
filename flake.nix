@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    import-tree.url = "github:denful/import-tree";
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,6 +17,7 @@
     inputs@{
       flake-parts,
       nvf,
+      import-tree,
       ...
     }:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -34,18 +36,8 @@
               (nvf.lib.neovimConfiguration {
                 inherit pkgs;
                 modules = [
-                  features/base.nix
-                  features/fmt.nix
-                  features/git.nix
-                  features/clipboard.nix
-                  features/theme.nix
-                  features/oil.nix
-                  features/lsp.nix
-                  features/trouble.nix
-                  languages/nix.nix
-                  languages/python.nix
-                  languages/rust.nix
-                  languages/go.nix
+                  (import-tree ./features)
+                  (import-tree ./languages)
                 ];
               }).neovim;
           };
