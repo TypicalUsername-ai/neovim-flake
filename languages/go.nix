@@ -3,7 +3,7 @@
   config.vim.languages.go = {
     enable = true;
     format = {
-      enable = false;
+      enable = false; # because gopls does the formatting
       type = [ "gofmt" ];
     };
     lsp = {

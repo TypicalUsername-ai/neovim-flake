@@ -45,6 +45,7 @@
                   languages/nix.nix
                   languages/python.nix
                   languages/rust.nix
+                  languages/go.nix
                 ];
               }).neovim;
           };
