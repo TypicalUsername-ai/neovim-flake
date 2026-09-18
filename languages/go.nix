@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+_: {
   config.vim.languages.go = {
     enable = true;
     format = {

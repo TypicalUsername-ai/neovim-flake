@@ -1,10 +1,13 @@
-{ config, pkgs, ... }:
-{
+_: {
   config.vim.languages.typescript = {
     enable = true;
     format = {
       enable = true;
-      type = [ "prettier" ];
+      type = [
+        "biome"
+        # "biome-check"
+        #"biome-organize-imports"
+      ];
     };
     lsp = {
       enable = true;

@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+_: {
   config.vim.languages.markdown = {
     enable = true;
     extensions.markview-nvim = {
@@ -10,6 +9,7 @@
     };
     lsp = {
       enable = true;
+      servers = [ "marksman" ]; # it's default but let's be safe
     };
     treesitter = {
       enable = true;

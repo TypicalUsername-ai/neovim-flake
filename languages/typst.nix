@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-{
+_: {
   config.vim.languages.typst = {
     enable = true;
     format = {
