@@ -1,7 +1,7 @@
-{ config, pkgs, ... }:
-{
+_: {
   config.vim = {
     lsp = {
+      enable = true;
       inlayHints.enable = true;
       lspSignature.enable = true;
       lspconfig = {
